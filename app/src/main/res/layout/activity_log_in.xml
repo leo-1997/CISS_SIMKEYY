@@ -33,8 +33,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#000000"
             android:padding="20dp"
-            android:text="您的登陆号码为: 18652063526/" />
+            android:text="您的登陆号码为: 18652063526" />
 
         <Button
             android:id="@+id/selection_button"
