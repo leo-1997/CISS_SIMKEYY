@@ -1,19 +1,15 @@
 package com.example.ciss_simkey;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.example.ciss_simkey.databinding.ActivityMainBinding;
 
@@ -31,11 +27,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-//        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,R.layout.main_title);
-        setTitle("选择程序");
+        getSupportActionBar().hide();
         mBinding.selectionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
