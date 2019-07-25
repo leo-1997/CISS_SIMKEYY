@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static Intent newIntent (Context packageContext, String appName) {
-        Intent intent = new Intent(packageContext, LogIn.class);
+        Intent intent = new Intent(packageContext, LogInActivity.class);
         intent.putExtra(EXTRA_APP_NAME, appName);
         return intent;
     }

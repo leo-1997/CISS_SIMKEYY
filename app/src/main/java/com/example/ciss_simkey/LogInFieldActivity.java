@@ -1,33 +1,31 @@
 package com.example.ciss_simkey;
 
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 
-import com.example.ciss_simkey.databinding.ActivityLogInBinding;
+import com.example.ciss_simkey.databinding.LoginFieldBinding;
 
 import java.util.ArrayList;
 
-public class LogIn extends AppCompatActivity {
+public class LogInFieldActivity extends AppCompatActivity {
+    private EditText mPhoneNumber;
+    private EditText mPinNumber;
 
-    private static final String EXTRA_APP_NAME="com.example.ciss_simkey.app";
-
-    private ActivityLogInBinding mBinding;
+    private LoginFieldBinding mBinding;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_log_in);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.login_field);
         setTitle("登录");
         centerTitle();
-        mBinding.appName.setText(getIntent().getStringExtra(EXTRA_APP_NAME));
-        mBinding.appName.setGravity(Gravity.CENTER);
     }
 
     private void centerTitle() {
