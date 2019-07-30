@@ -16,7 +16,7 @@ import com.example.ciss_simkey.databinding.ActivityMainBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class StartActivity extends AppCompatActivity {
 
     private static final String EXTRA_APP_NAME="com.example.ciss_simkey.app";
 
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
                 mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-                List<ResolveInfo> appsList = MainActivity.this.getPackageManager().queryIntentActivities(mainIntent, 0);
+                List<ResolveInfo> appsList = StartActivity.this.getPackageManager().queryIntentActivities(mainIntent, 0);
                 showAppList(appsList);
             }
         });
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         int i = 0;
         for (ResolveInfo info: appList) {
             if ((info.activityInfo.applicationInfo.flags & info.activityInfo.applicationInfo.FLAG_SYSTEM) <= 0 ) {
-                app.add(info.loadLabel(MainActivity.this.getPackageManager()).toString());
+                app.add(info.loadLabel(StartActivity.this.getPackageManager()).toString());
             }
         }
         final String apps[] =  new String[app.size()];
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         alertBuilder.setItems(apps, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                startActivity(MainActivity.newIntent(MainActivity.this, apps[i]));
+                startActivity(StartActivity.newIntent(StartActivity.this, apps[i]));
                 mAlert.dismiss();
             }
         });

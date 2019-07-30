@@ -42,7 +42,7 @@
             style="@style/button_blue_style"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:text="登录"
+            android:text="@string/login_button"
             android:textColor="@color/white" />
 
     </LinearLayout>

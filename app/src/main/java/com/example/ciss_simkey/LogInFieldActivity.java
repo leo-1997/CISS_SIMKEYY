@@ -1,58 +1,48 @@
 package com.example.ciss_simkey;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatTextView;
-import androidx.appcompat.widget.Toolbar;
+import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 
 import com.example.ciss_simkey.databinding.LoginFieldBinding;
 
-import java.util.ArrayList;
+public class LogInFieldActivity extends CustomTitleBarActivity {
+    private static final int REQUEST_LOG_IN = 1;
 
-public class LogInFieldActivity extends AppCompatActivity {
     private EditText mPhoneNumber;
     private EditText mPinNumber;
 
     private LoginFieldBinding mBinding;
 
     @Override
+    protected int setTitleName() {
+        return R.string.login_button;
+    }
+
+    @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.login_field);
-        setTitle("登录");
         centerTitle();
+        mBinding.selectionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivityForResult(new Intent(LogInFieldActivity.this, LogInProgress.class), REQUEST_LOG_IN);
+            }
+        });
     }
 
-    private void centerTitle() {
-        ArrayList<View> textViews = new ArrayList<>();
-
-        getWindow().getDecorView().findViewsWithText(textViews, getTitle(), View.FIND_VIEWS_WITH_TEXT);
-
-        if(textViews.size() > 0) {
-            AppCompatTextView appCompatTextView = null;
-            if(textViews.size() == 1) {
-                appCompatTextView = (AppCompatTextView) textViews.get(0);
-            } else {
-                for(View v : textViews) {
-                    if(v.getParent() instanceof Toolbar) {
-                        appCompatTextView = (AppCompatTextView) v;
-                        break;
-                    }
-                }
-            }
-
-            if(appCompatTextView != null) {
-                ViewGroup.LayoutParams params = appCompatTextView.getLayoutParams();
-                params.width = ViewGroup.LayoutParams.MATCH_PARENT;
-                appCompatTextView.setLayoutParams(params);
-                appCompatTextView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-            }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == REQUEST_LOG_IN && resultCode == Activity.RESULT_CANCELED) {
+            Toast mToast = Toast.makeText(LogInFieldActivity.this, R.string.cancel_toast, Toast.LENGTH_SHORT);
+            mToast.show();
         }
     }
-
 }
