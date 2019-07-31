@@ -15,16 +15,12 @@ public class LogInActivity extends CustomTitleBarActivity {
 
     private ActivityLogInBinding mBinding;
 
-    @Override
-    protected int setTitleName() {
-        return R.string.login_button;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_log_in);
-        centerTitle();
+        centerTitle(R.string.login_button);
         mBinding.appName.setText(getIntent().getStringExtra(EXTRA_APP_NAME));
         mBinding.appName.setGravity(Gravity.CENTER);
         mBinding.selectionButton.setOnClickListener(new View.OnClickListener() {

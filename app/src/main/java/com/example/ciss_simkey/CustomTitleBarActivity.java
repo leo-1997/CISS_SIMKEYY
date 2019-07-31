@@ -11,10 +11,8 @@ import java.util.ArrayList;
 
 public abstract class CustomTitleBarActivity extends AppCompatActivity {
 
-    protected abstract int setTitleName();
-
-    protected void centerTitle() {
-        setTitle(setTitleName());
+    protected void centerTitle(int titleId) {
+        setTitle(titleId);
         ArrayList<View> textViews = new ArrayList<>();
 
         getWindow().getDecorView().findViewsWithText(textViews, getTitle(), View.FIND_VIEWS_WITH_TEXT);

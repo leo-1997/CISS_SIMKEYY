@@ -21,15 +21,10 @@ public class LogInFieldActivity extends CustomTitleBarActivity {
     private LoginFieldBinding mBinding;
 
     @Override
-    protected int setTitleName() {
-        return R.string.login_button;
-    }
-
-    @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.login_field);
-        centerTitle();
+        centerTitle(R.string.login_button);
         mBinding.selectionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -18,16 +18,11 @@ public class LogInProgress extends CustomTitleBarActivity {
     private ProgressBar mProgressBar;
 
     @Override
-    protected int setTitleName() {
-        return R.string.login_button;
-    }
-
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.progress_bar);
 
-        centerTitle();
+        centerTitle(R.string.login_button);
 
         mTextView = findViewById(R.id.progress_text);
         mProgressBar = findViewById(R.id.progress_bar);
@@ -82,7 +77,7 @@ public class LogInProgress extends CustomTitleBarActivity {
         @Override
         protected void onPostExecute(String s) {
             mTextView.setText("加载完毕");
-            startActivity(new Intent(LogInProgress.this, MainPageActivity.class));
+            startActivity(new Intent(LogInProgress.this, MainProcessActivity.class));
         }
 
         @Override
