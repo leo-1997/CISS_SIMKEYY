@@ -9,8 +9,16 @@ import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
 
+/***
+ * An abstract class for the activity in the program
+ *
+ */
 public abstract class CustomTitleBarActivity extends AppCompatActivity {
 
+    /***
+     * To set the title of the tool bar set the title in the middle
+     * @param titleId To set the resource id of the title
+     */
     protected void centerTitle(int titleId) {
         setTitle(titleId);
         ArrayList<View> textViews = new ArrayList<>();
