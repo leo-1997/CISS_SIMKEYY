@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 
 import android.view.MenuItem;
@@ -27,11 +26,14 @@ public class MainPageActivity extends CustomTitleBarActivity {
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.title_home);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_scan:
+                    mTextMessage.setText(R.string.title_scan);
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_feedback:
+                    mTextMessage.setText(R.string.title_feedback);
+                    return true;
+                case R.id.navigation_about:
+                    mTextMessage.setText(R.string.title_about);
                     return true;
             }
             return false;
