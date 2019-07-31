@@ -33,9 +33,6 @@ public class LogInProgress extends CustomTitleBarActivity {
         mProgressBar = findViewById(R.id.progress_bar);
 
         mTask = new MyTask();
-
-        System.out.println("HERERE!");
-
         mTask.execute();
 
         mCancel = findViewById(R.id.progress_cancel);
@@ -67,7 +64,7 @@ public class LogInProgress extends CustomTitleBarActivity {
 
                     count += length;
                     publishProgress(count);
-                    Thread.sleep(30);
+                    Thread.sleep(0);
                 }
             }catch (InterruptedException e) {
                 e.printStackTrace();
