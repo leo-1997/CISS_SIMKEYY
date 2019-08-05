@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-public class FeedBackFragment extends Fragment {
+public class FeedBackPageFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

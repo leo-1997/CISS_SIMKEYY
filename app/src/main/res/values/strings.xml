@@ -20,4 +20,6 @@
     <string name="title_about">关于</string>
 
     <string name="feedback_description">问题描述</string>
+    <string name="submit">提交</string>
+    <string name="check_update">检查新版本</string>
 </resources>

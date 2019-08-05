@@ -58,8 +58,8 @@ public class MainProcessActivity extends CustomTitleBarActivity {
         mFragmentList = new ArrayList<>();
         mFragmentList.add(new MainPageFragment());
         mFragmentList.add(new TestPageFragment());
-        mFragmentList.add(new FeedBackFragment());
-        mFragmentList.add(new TestPageFragment());
+        mFragmentList.add(new FeedBackPageFragment());
+        mFragmentList.add(new AboutPageFragment());
 
         mTitleIdList = new ArrayList<>();
         mTitleIdList.add(R.string.title_home);
