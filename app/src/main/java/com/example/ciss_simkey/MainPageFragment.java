@@ -7,9 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.ImageView;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 public class MainPageFragment extends Fragment {
@@ -23,7 +21,7 @@ public class MainPageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main_page, container, false);
 
-        setScale(view, R.id.imageView);
+//        setScale(view, R.id.imageView);
 
         return view;
     }
@@ -40,8 +38,8 @@ public class MainPageFragment extends Fragment {
         int sWidth = metrics.widthPixels;
         int sHeight = metrics.heightPixels;
 
-        ImageView mImage = view.findViewById(imgId);
-        ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(sWidth, (int) ((float) 3/5 * sHeight));
-        mImage.setLayoutParams(params);
+//        ImageView mImage = view.findViewById(imgId);
+//        ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(sWidth, (int) ((float) 3/5 * sHeight));
+//        mImage.setLayoutParams(params);
     }
 }

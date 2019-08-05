@@ -55,7 +55,7 @@ public class StartActivity extends AppCompatActivity {
         }
 
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
-        alertBuilder.setTitle("AppList");
+        alertBuilder.setTitle("选择软件");
         alertBuilder.setItems(apps, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

@@ -1,8 +1,7 @@
 package com.example.ciss_simkey;
 
 import android.os.Bundle;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -10,8 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.view.MenuItem;
-import android.widget.TextView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +58,7 @@ public class MainProcessActivity extends CustomTitleBarActivity {
         mFragmentList = new ArrayList<>();
         mFragmentList.add(new MainPageFragment());
         mFragmentList.add(new TestPageFragment());
-        mFragmentList.add(new TestPageFragment());
+        mFragmentList.add(new FeedBackFragment());
         mFragmentList.add(new TestPageFragment());
 
         mTitleIdList = new ArrayList<>();
